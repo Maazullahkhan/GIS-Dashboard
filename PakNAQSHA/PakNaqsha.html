@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Interactive Map</title>
+    <!-- Tailwind CSS for modern styling and layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        crossorigin=""
+    />
+    <!-- Leaflet.Measure CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/leaflet-measure-path@2.2.2/dist/leaflet-measure-path.css"
+    />
+    <style>
+        /* Custom styles to ensure the map fills the viewport height */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow: hidden; /* Prevent body scroll */
+        }
+        #map {
+            height: 100vh; /* Map fills the entire viewport height */
+            width: 100vw; /* Map fills the entire viewport width */
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Main container for the map -->
+    <div id="map"></div>
+
+    <!-- Leaflet JavaScript -->
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        crossorigin=""
+    ></script>
+    <!-- Leaflet.Measure JS -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-measure-path@2.2.2/dist/leaflet-measure-path.min.js"></script>
+
+    <script>
+        // Approximate center of Pakistan coordinates: [30.3753, 69.3451]
+        // Zoom level 6 is suitable for viewing the whole country.
+        const map = L.map('map').setView([30.3753, 69.3451], 6);
+
+        // Add the OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors',
+        }).addTo(map);
+
+        // Initialize the measure control with area calculation enabled
+        const measureControl = new L.Control.Measure({
+            position: 'topright',
+            showClearControl: true,
+            showUnitControl: true,
+            measureControlTitleOn: 'Turn on area measurement',
+            measureControlTitleOff: 'Turn off area measurement',
+            decPoint: '.',
+            thousandsSep: ',',
+            units: {
+                area: ['sq km', 'sq m', 'ha'], // square kilometers, meters, hectares
+                length: ['km', 'm'],
+            },
+            primaryLengthUnit: 'km',
+            primaryAreaUnit: 'sq km',
+            activeColor: '#00b0ff',
+            completedColor: '#ffea00',
+        });
+
+        map.addControl(measureControl);
+
+        // Resize handler to ensure the map is correctly sized on viewport change
+        window.addEventListener('resize', function () {
+            map.invalidateSize();
+        });
+
+        console.log('Map initialized, centered on Pakistan with area measurement enabled.');
+    </script>
+</body>
+</html>
+
