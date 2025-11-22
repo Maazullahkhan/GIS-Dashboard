@@ -1,13 +1,163 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cadastral-dashboard</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastral Land Records Dashboard</title>
+  <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    /* Inline styles to make leaflet map fill container */
+    #map {
+      height: 80vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <header class="bg-blue-700 text-white p-4">
+    <h1 class="text-xl font-bold">Cadastral Land Records Dashboard</h1>
+  </header>
+
+  <main class="p-4 max-w-7xl mx-auto">
+    <section class="mb-4">
+      <label for="shapefile-upload" class="block mb-2 font-semibold">Upload Shapefiles (shp, shx, dbf):</label>
+      <input
+        id="shapefile-upload"
+        type="file"
+        multiple
+        accept=".shp,.shx,.dbf"
+        class="border rounded p-2 w-full"
+      />
+    </section>
+
+    <section class="mb-4">
+      <button id="export-pdf" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+        Export Map as PDF
+      </button>
+    </section>
+
+    <section id="map" class="rounded shadow"></section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/shpjs@3.4.1/dist/shp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="main.js"></script>
+</body>
+>>>>>>> 7e96663 (Initial commit for Cadastral Land Records Dashboard with fixes and tested build)
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastral Land Records Dashboard</title>
+  <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    /* Inline styles to make leaflet map fill container */
+    #map {
+      height: 80vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <header class="bg-blue-700 text-white p-4">
+    <h1 class="text-xl font-bold">Cadastral Land Records Dashboard</h1>
+  </header>
+
+  <main class="p-4 max-w-7xl mx-auto">
+    <section class="mb-4">
+      <label for="shapefile-upload" class="block mb-2 font-semibold">Upload Shapefiles (shp, shx, dbf):</label>
+      <input
+        id="shapefile-upload"
+        type="file"
+        multiple
+        accept=".shp,.shx,.dbf"
+        class="border rounded p-2 w-full"
+      />
+    </section>
+
+    <section class="mb-4">
+      <button id="export-pdf" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+        Export Map as PDF
+      </button>
+    </section>
+
+    <section id="map" class="rounded shadow"></section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/shpjs@3.4.1/dist/shp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="main.js"></script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastral Land Records Dashboard</title>
+  <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    /* Inline styles to make leaflet map fill container */
+    #map {
+      height: 80vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <header class="bg-blue-700 text-white p-4">
+    <h1 class="text-xl font-bold">Parang Saddukhel Mouza Dashboard</h1>
+  </header>
+
+  <main class="p-4 max-w-7xl mx-auto">
+    <section class="mb-4">
+      <label for="shapefile-upload" class="block mb-2 font-semibold">Upload Shapefiles (shp, shx, dbf):</label>
+      <input
+        id="shapefile-upload"
+        type="file"
+        multiple
+        accept=".shp,.shx,.dbf"
+        class="border rounded p-2 w-full"
+      />
+    </section>
+
+    <section class="mb-4">
+      <button id="export-pdf" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+        Export Map as PDF
+      </button>
+    </section>
+
+    <section id="map" class="rounded shadow"></section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/shpjs@3.4.1/dist/shp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="main.js"></script>
+</body>
+>>>>>>> 7e96663 (Initial commit for Cadastral Land Records Dashboard with fixes and tested build)
 </html>
